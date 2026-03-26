@@ -1,15 +1,15 @@
 class Udl < Formula
   desc "Set up and sync local music libraries from SoundCloud and Spotify sources"
   homepage "https://github.com/adamhalama/music-library-sync"
-  version "0.1.3"
+  version "0.1.4"
 
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/adamhalama/music-library-sync/releases/download/v#{version}/udl-v#{version}-darwin-arm64.tar.gz"
-      sha256 "937db093424a72598ecf784117c2d0a35aea12ac9367b60cff921da170f3b728"
+      sha256 "083d2e76179d3788fb9bf129fcf98d5096fb508535f0582610f862bcb3e8e3f1"
     else
       url "https://github.com/adamhalama/music-library-sync/releases/download/v#{version}/udl-v#{version}-darwin-amd64.tar.gz"
-      sha256 "6caa15c915f8b49672990e8c9a52c57ad19dbb604d585971c354d66cd9044bfa"
+      sha256 "024e78dc55c1a025c4cf86b6f6cdf612f80f4fd3ad7effa3691d9cda2aa1462a"
     end
   end
 
@@ -18,7 +18,7 @@ class Udl < Formula
     chmod "+x", libexec/"udl"
     chmod "+x", libexec/"tools/scdl"
     chmod "+x", libexec/"tools/yt-dlp"
-    bin.write_env_script libexec/"udl", PATH: "#{libexec}/tools:$PATH"
+    (bin/"udl").write_env_script libexec/"udl", PATH: "#{libexec}/tools:$PATH"
   end
 
   test do
