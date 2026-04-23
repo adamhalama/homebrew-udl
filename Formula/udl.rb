@@ -1,17 +1,17 @@
 class Udl < Formula
   desc "Set up and sync local music libraries from SoundCloud and Spotify sources"
   homepage "https://github.com/adamhalama/music-library-sync"
-  version "0.1.5"
+  version "0.2.0"
   depends_on "scdl"
   depends_on "yt-dlp"
 
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/adamhalama/music-library-sync/releases/download/v#{version}/udl-v#{version}-darwin-arm64.tar.gz"
-      sha256 "7333ba325c9a9475dbf5593f833b5237bbd14d2e011808903e99b3e7a5db6b2f"
+      sha256 "fab4bf14cc69f19731d25d8640b39a425da49a2973cf0db974147c2c6df7a47e"
     else
       url "https://github.com/adamhalama/music-library-sync/releases/download/v#{version}/udl-v#{version}-darwin-amd64.tar.gz"
-      sha256 "2c23f1bb5884ecf43b6726c77ded1161fbdb578def828f699d77000a16834306"
+      sha256 "f191af7ec88776844dea82e7e6ed999694591eece5c6671a825c92e9e846eab5"
     end
   end
 
